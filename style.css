@@ -1,0 +1,138 @@
+/* === Variables === */
+:root {
+  --bg-color: #f0f0f0;
+  --text-color: #333;
+  --card-bg: #ffffff;
+  --card-shadow: rgba(0,0,0,0.2);
+  --accent-color: #0077ff;
+}
+
+body.dark-mode {
+  --bg-color: #1e1e1e;
+  --text-color: #f0f0f0;
+  --card-bg: #2c2c2c;
+  --card-shadow: rgba(0,0,0,0.6);
+}
+
+/* === General Styles === */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: all 0.3s ease;
+  scroll-behavior: smooth;
+}
+
+h1,h2,h3 {
+  margin: 0.5rem 0;
+}
+
+/* === Header / Navbar === */
+header {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: var(--bg-color);
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1000px;
+  margin: auto;
+  padding: 1rem;
+  transition: all 0.3s ease;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+nav.scrolled {
+  background-color: var(--card-bg);
+  box-shadow: 0 4px 15px var(--card-shadow);
+  border-radius: 10px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  padding: 0;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: var(--text-color);
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.nav-links li a:hover {
+  color: var(--accent-color);
+}
+
+#dark-mode-toggle {
+  cursor: pointer;
+  font-size: 1.2rem;
+  background: none;
+  border: none;
+  color: var(--text-color);
+}
+
+/* === Sections === */
+section {
+  max-width: 1000px;
+  margin: 2rem auto;
+  padding: 1rem;
+}
+
+.tagline {
+  font-size: 1.2rem;
+  color: var(--accent-color);
+  margin-top: 0.5rem;
+}
+
+/* === Projects === */
+.projects-container {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.project-card {
+  background-color: var(--card-bg);
+  box-shadow: 0 4px 10px var(--card-shadow);
+  padding: 1rem;
+  border-radius: 10px;
+  width: 250px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px var(--card-shadow);
+}
+
+/* === Footer === */
+footer {
+  text-align: center;
+  padding: 1rem;
+  margin-top: 2rem;
+  font-size: 0.9rem;
+  border-top: 1px solid var(--card-shadow);
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .projects-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
